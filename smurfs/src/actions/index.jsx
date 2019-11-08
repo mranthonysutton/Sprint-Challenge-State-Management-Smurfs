@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
-export const FETCH_FAILURE = "FETCH_FAILUR";
+export const FETCH_FAILURE = "FETCH_FAILURE";
 
 // axios call to obtain data
 export const fetchSmurfsData = () => dispatch => {
@@ -16,4 +16,8 @@ export const fetchSmurfsData = () => dispatch => {
 
 export const addSmurf = smurf => dispatch => {
   axios.post("http://localhost:3333/smurfs", smurf);
+};
+
+export const deleteSmurf = smurf => dispatch => {
+  axios.delete(`http://localhost:3333/smurfs/${smurf}`);
 };

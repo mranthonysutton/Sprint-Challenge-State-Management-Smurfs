@@ -23,6 +23,7 @@ const RenderSmurfs = props => {
         props.smurfsData.map(smurf => (
           <Smurfs
             key={smurf.id}
+            id={smurf.id}
             name={smurf.name}
             age={smurf.age}
             height={smurf.height}
