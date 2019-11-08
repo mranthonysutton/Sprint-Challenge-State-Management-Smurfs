@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchSmurfsData } from "../../actions";
+import { Box } from "@material-ui/core";
 import Smurfs from "./Smurfs";
 
 const RenderSmurfs = props => {
@@ -10,7 +11,15 @@ const RenderSmurfs = props => {
   }, []);
 
   return (
-    <div>
+    <Box
+      display="flex"
+      flexWrap="wrap"
+      justifyContent="space-between"
+      alignContent="center"
+      justifyItems="center"
+      textAlign="center"
+      marginTop="3%"
+    >
       {props.isFetching && (
         <div>
           <h2>Loading Smurfs...</h2>
@@ -29,7 +38,7 @@ const RenderSmurfs = props => {
             height={smurf.height}
           />
         ))}
-    </div>
+    </Box>
   );
 };
 

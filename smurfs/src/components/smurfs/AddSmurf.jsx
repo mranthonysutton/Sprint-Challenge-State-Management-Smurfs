@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { TextField, Fab } from "@material-ui/core";
+import { TextField, Fab, Box } from "@material-ui/core";
 import { addSmurf } from "../../actions";
 
 const AddSmurf = props => {
@@ -21,7 +21,7 @@ const AddSmurf = props => {
   };
 
   return (
-    <form>
+    <Box display="flex" flexDirection="column">
       <TextField
         name="name"
         label="Smurf Name..."
@@ -56,7 +56,7 @@ const AddSmurf = props => {
       >
         Add Smurf
       </Fab>
-    </form>
+    </Box>
   );
 };
 
