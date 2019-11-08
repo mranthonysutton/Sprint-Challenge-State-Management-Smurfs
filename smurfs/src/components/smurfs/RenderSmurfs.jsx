@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchSmurfsData } from "../../actions";
+import Smurfs from "./Smurfs";
 
 const RenderSmurfs = props => {
   useEffect(() => {
@@ -15,6 +16,18 @@ const RenderSmurfs = props => {
           <h2>Loading Smurfs...</h2>
         </div>
       )}
+
+      {props.errors && <div>{props.errors}</div>}
+
+      {props.smurfsData &&
+        props.smurfsData.map(smurf => (
+          <Smurfs
+            key={smurf.id}
+            name={smurf.name}
+            age={smurf.age}
+            height={smurf.height}
+          />
+        ))}
     </div>
   );
 };
