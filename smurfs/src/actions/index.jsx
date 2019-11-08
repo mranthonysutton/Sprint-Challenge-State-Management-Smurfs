@@ -1,5 +1,15 @@
+import axios from "axios";
+
 export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILUR";
 
 // axios call to obtain data
+export const fetchSmurfsData = () => dispatch => {
+  dispatch({ type: FETCH_START });
+
+  axios
+    .get("http://localhost:3333/smurfs")
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
+};
